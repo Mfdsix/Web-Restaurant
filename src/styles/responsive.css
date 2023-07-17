@@ -59,7 +59,11 @@
         font-size: 48px;
     }
     .hero .hero__inner .hero__description{
-        font-size: 10px;
+        font-size: 12px;
+    }
+    .hero .hero__inner .hero__description a{
+        font-size: 20px;
+        padding: 10px 0;
     }
 
     .favorite{

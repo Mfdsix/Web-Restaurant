@@ -19,6 +19,9 @@ html, body{
 a{
   text-decoration: none;
   color: var(--color-primary);
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-block;
 }
 body{
   background: var(--color-grey);
@@ -68,17 +71,15 @@ img{
   display: flex;
 }
 .header__nav .nav__list .nav__item .nav__link{
-  padding: 15px 25px;
+  font-size: 27px;
+  padding: 10px 25px;
 }
 .header__nav .nav__list .nav__item:hover .nav__link{
   font-weight: bold;
   border-bottom: 2px solid var(--color-primary);
 }
 .header__menu{
-  font-size: 36px;
-  min-height: 44px;
-  min-width: 44px;
-  display: inline-block;
+  font-size: 48px;
 }
 
 #drawer{
@@ -156,6 +157,7 @@ img{
 .hero .hero__inner .hero__description a{
   color: var(--color-white);
   padding: 10px 0;
+  font-size: 27px;
   border-bottom: 2px dotted var(--color-white);
 }
 .hero .hero__inner .hero__description a:hover{
