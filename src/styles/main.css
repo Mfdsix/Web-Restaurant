@@ -34,6 +34,16 @@ img{
   font-family: 'Anton', sans-serif;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  z-index: 100;
+}
+
 
 /* headers */
 .header{
@@ -137,6 +147,7 @@ img{
 .hero .hero__inner .hero__description a{
   color: var(--color-white);
   padding-bottom: 10px;
+  border-bottom: 2px dotted var(--color-white);
 }
 .hero .hero__inner .hero__description a:hover{
   color: var(--color-primary);
@@ -209,6 +220,12 @@ img{
 .favorite .favorite__content .favorite__item .favorite__inner .favorite__city{
   font-size: 16px;
   font-style: italic;
+}
+.favorite .favorite__content .favorite__item .favorite__inner .favorite__link{
+  color: var(--color-primary);
+}
+.favorite .favorite__content .favorite__item .favorite__inner .favorite__link:hover{
+  color: var(--color-text);
 }
 
 footer{
