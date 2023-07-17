@@ -17,8 +17,8 @@ restaurants.forEach((restaurant) => {
             <div class="favorite__rating">${restaurant.rating}</div>
         </div>
         <div class="favorite__inner">
-            <h4 class="favorite__city">${restaurant.city}</h4>
             <a href="#" class="favorite__link">
+                <h4 class="favorite__city">${restaurant.city}</h4>
                 <h3 class="favorite__title">${restaurant.name}</h3>
             </a>
         </div>
