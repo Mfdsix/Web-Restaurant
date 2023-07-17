@@ -76,6 +76,9 @@ img{
 }
 .header__menu{
   font-size: 36px;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-block;
 }
 
 #drawer{
