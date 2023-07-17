@@ -1,0 +1,219 @@
+/* variables */
+:root{
+  --color-primary: #0E7177;
+  --color-secondary: #AEE1D0;
+  --color-white: #FFF;
+  --color-grey: #FAF9F7;
+  --color-text: #333;
+}
+
+
+/* generals */
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: var(--color-primary);
+}
+body{
+  background: var(--color-grey);
+  color: var(--color-text);
+  font-family: 'Tektur', cursive;
+  font-size: 16px;
+}
+img{
+  display: block;
+  width: 100%;
+}
+.font-title{
+  font-family: 'Anton', sans-serif;
+}
+
+
+/* headers */
+.header{
+  background-color: var(--color-white);
+  padding: 20px 100px;
+}
+.header .header__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__inner .header__brand{
+  color: var(--color-primary);
+  font-size: 18px;
+}
+.header__nav .nav__list{
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.header__nav .nav__list .nav__item .nav__link{
+  padding: 10px 25px;
+}
+.header__nav .nav__list .nav__item:hover .nav__link{
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-primary);
+}
+.header__menu{
+  font-size: 36px;
+}
+
+#drawer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  min-height: 100vh;
+  z-index: 10;
+  padding: 20px;
+  display: none;
+}
+#drawer.open{
+  display: block;
+}
+#drawer .nav__list{
+  list-style: none;
+  padding-left: 0px;
+}
+#drawer .nav__list .nav__item{
+  padding: 20px;
+  border-bottom: 1px solid var(--color-text);
+}
+#drawer__close{
+  text-align: end;
+  padding-right: 20px;
+}
+#drawer__close a{
+  text-align: end;
+  color: red;
+  font-size: 32px;
+}
+
+/* hero */
+.hero{
+  position: relative;
+}
+.hero .hero__img{
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: cover;
+}
+.hero .hero__inner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero .hero__inner{
+  color: var(--color-white);
+  padding-left: 40%;
+}
+.hero .hero__inner h1{
+  font-size: 100px;
+  letter-spacing: 5px;
+}
+.hero .hero__inner h2{
+  letter-spacing: 8px;
+}
+.hero .hero__inner .hero__description{
+  padding-left: 100px;
+  font-size: 20px;
+  max-width: 60%;
+}
+.hero .hero__inner .hero__description a{
+  color: var(--color-white);
+  padding-bottom: 10px;
+}
+.hero .hero__inner .hero__description a:hover{
+  color: var(--color-primary);
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-primary);
+  letter-spacing: 2px;
+}
+
+.section-title{
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 48px;
+  margin-bottom: 32px;
+}
+
+/* favorites */
+.favorite{
+  position: relative;
+  padding: 50px 100px;
+}
+.favorite .favorite__content{
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, auto);
+  position: relative;
+}
+.favorite .favorite__background{
+  position: absolute;
+  bottom: 0;
+  height: 75%;
+  left: 0;
+  right: 0;
+  background: var(--color-secondary);
+}
+.favorite .favorite__content .favorite__item .favorite__img{
+  position: relative;
+}
+.favorite .favorite__content .favorite__item img{
+  height: 250px;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.favorite .favorite__content .favorite__item img:hover{
+  left: -100px;
+  opacity: 1;
+  filter: brightness(0.6);
+}
+.favorite .favorite__content .favorite__item .favorite__img .favorite__rating{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 20px;
+  padding: 10px;
+  display: none;
+}
+.favorite .favorite__content .favorite__item .favorite__img:hover .favorite__rating{
+  display: block;
+}
+.favorite .favorite__content .favorite__item .favorite__inner{
+  padding: 10px 0;
+  margin-top: 20px;
+  border-top: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+}
+.favorite .favorite__content .favorite__item .favorite__inner .favorite__title{
+  font-size: 28px;
+}
+.favorite .favorite__content .favorite__item .favorite__inner .favorite__city{
+  font-size: 16px;
+  font-style: italic;
+}
+
+footer{
+  background: var(--color-text);
+  padding: 50px 100px;
+  text-align: end;
+  color: var(--color-white);
+}
