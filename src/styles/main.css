@@ -36,6 +36,10 @@ img{
 .font-title{
   font-family: 'Anton', sans-serif;
 }
+.placeholder{
+  min-height: 20px;
+  background: var(--color-primary);
+}
 
 .skip-link {
   position: absolute;
@@ -174,18 +178,18 @@ img{
   margin-bottom: 32px;
 }
 
-/* favorites */
-.favorite{
+/* best */
+.best{
   position: relative;
   padding: 50px 100px;
 }
-.favorite .favorite__content{
+.best #best__content{
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(3, auto);
   position: relative;
 }
-.favorite .favorite__background{
+.best .best__background{
   position: absolute;
   bottom: 0;
   height: 75%;
@@ -193,20 +197,20 @@ img{
   right: 0;
   background: var(--color-secondary);
 }
-.favorite .favorite__content .favorite__item .favorite__img{
+.best #best__content .best__item .best__img{
   position: relative;
 }
-.favorite .favorite__content .favorite__item img{
+.best #best__content .best__item img{
   height: 250px;
   object-fit: cover;
   opacity: 0.8;
 }
-.favorite .favorite__content .favorite__item img:hover{
+.best #best__content .best__item img:hover{
   left: -100px;
   opacity: 1;
   filter: brightness(0.6);
 }
-.favorite .favorite__content .favorite__item .favorite__img .favorite__rating{
+.best #best__content .best__item .best__img .best__rating{
   position: absolute;
   right: 5px;
   top: 5px;
@@ -216,30 +220,31 @@ img{
   padding: 10px;
   display: none;
 }
-.favorite .favorite__content .favorite__item .favorite__img:hover .favorite__rating{
+.best #best__content .best__item .best__img:hover .best__rating{
   display: block;
 }
-.favorite .favorite__content .favorite__item .favorite__inner{
+.best #best__content .best__item .best__inner{
   padding: 10px 0;
   margin-top: 20px;
   border-top: 2px solid var(--color-text);
   border-bottom: 2px solid var(--color-text);
 }
-.favorite .favorite__content .favorite__item .favorite__inner .favorite__title{
+.best #best__content .best__item .best__inner .best__title{
   font-size: 28px;
 }
-.favorite .favorite__content .favorite__item .favorite__inner .favorite__city{
+.best #best__content .best__item .best__inner .best__city{
   font-size: 16px;
   font-style: italic;
   color: var(--color-text);
 }
-.favorite .favorite__content .favorite__item .favorite__inner .favorite__link{
+.best #best__content .best__item .best__link{
   color: var(--color-primary);
+  width: 100%;
 }
-.favorite .favorite__content .favorite__item .favorite__inner .favorite__link:hover{
+.best #best__content .best__item .best__link:hover{
   color: var(--color-text);
 }
-.favorite .favorite__content .favorite__item .favorite__inner .favorite__link:hover h3{
+.best #best__content .best__item .best__link:hover h3{
   letter-spacing: 3px;
 }
 

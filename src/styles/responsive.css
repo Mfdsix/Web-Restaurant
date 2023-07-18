@@ -17,7 +17,7 @@
         font-size: 72px;
     }
 
-    .favorite{
+    .best{
         padding: 50px;
     }
     footer{
@@ -36,10 +36,10 @@
         padding: 0;
         margin: 0 auto;
     }
-    .favorite .favorite__content{
+    .best #best__content{
         grid-template-columns: repeat(2, auto);
     }
-    .favorite .favorite__content .favorite__item .favorite__img .favorite__rating{
+    .best #best__content .best__item .best__img .best__rating{
         display: block;
     }
 }
@@ -66,10 +66,10 @@
         padding: 10px 0;
     }
 
-    .favorite{
+    .best{
         padding: 50px 20px;
     }
-    .favorite .favorite__content{
+    .best #best__content{
         grid-template-columns: auto;
     }
 

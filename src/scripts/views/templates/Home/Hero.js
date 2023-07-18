@@ -1,4 +1,4 @@
-const HeroTemplate = () => `
+const HeroTemplate = `
 <div class="hero">
     <img class="hero__img" src="/images/heros/hero-image_4.jpg" alt="Food Hero Background">
 

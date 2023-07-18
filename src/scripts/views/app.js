@@ -1,5 +1,5 @@
 import AppDrawer from './components/AppDrawer'
-import UrlParser from '../routes/url-parser'
+import UrlParser from '../utils/url-parser'
 import routes from '../routes'
 
 class App {

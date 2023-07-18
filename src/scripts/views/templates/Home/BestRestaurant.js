@@ -1,25 +1,19 @@
-const BestRestaurantTemplate = (restaurants) => `
-    <section class="favorite">
-        <h3 class="section-title font-title">Puth's Best</h3>
-        <div class="favorite__background"></div>
+import AssetHelper from '../../../utils/asset-helper'
 
-        <div class="favorite__content">` +
-        restaurants.map((restaurant) => `
-            <article class="favorite__item">
-                <div class="favorite__img">
-                    <img class="" src="${restaurant.pictureId}" alt="${restaurant.name}">
-                    <div class="favorite__rating">${restaurant.rating}</div>
-                </div>
-                <div class="favorite__inner">
-                    <a href="#" class="favorite__link">
-                        <h4 class="favorite__city">${restaurant.city}</h4>
-                        <h3 class="favorite__title">${restaurant.name}</h3>
-                    </a>
-                </div>
-            </article>`
-        ).join('') +
-        `</div>
-    </section>
-`
+const BestRestaurantTemplate = (restaurants = []) => restaurants.map((restaurant) => `
+    <article class="best__item">
+        <a href="#" class="best__link">
+            <div class="best__img">
+                <img class="" src="${AssetHelper.getAsset(restaurant.pictureId)}" alt="${restaurant.name}">
+                <div class="best__rating">${restaurant.rating}</div>
+            </div>
+
+            <div class="best__inner">
+                <h4 class="best__city">${restaurant.city}</h4>
+                <h3 class="best__title">${restaurant.name}</h3>
+            </div>
+        </a>
+    </article>`
+).join('')
 
 export default BestRestaurantTemplate

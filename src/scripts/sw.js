@@ -1,4 +1,5 @@
 import 'regenerator-runtime'
+import CacheHelper from './utils/cache-helper'
 
 // Caching the listed asset below
 const assetsToCache = [
