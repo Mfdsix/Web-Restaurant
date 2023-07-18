@@ -2,7 +2,7 @@ import AssetHelper from '../../../utils/asset-helper'
 
 const BestRestaurantTemplate = (restaurants = []) => restaurants.map((restaurant) => `
     <article class="best__item">
-        <a href="#" class="best__link">
+        <a href="/#/resto/${restaurant.id}" class="best__link">
             <div class="best__img">
                 <img class="" src="${AssetHelper.getAsset(restaurant.pictureId)}" alt="${restaurant.name}">
                 <div class="best__rating">${restaurant.rating}</div>
