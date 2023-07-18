@@ -1,16 +1,16 @@
 import 'regenerator-runtime' /* for async await transpile */
 import '../styles/main.css'
 import '../styles/responsive.css'
-import DATA from "../public/data/DATA.json"
+import DATA from '../public/data/DATA.json'
 
 const { restaurants } = DATA
 
 // load restaurants data
-const FAVORITE_CONTENT = document.querySelector(".favorite__content")
+const FAVORITE_CONTENT = document.querySelector('.favorite__content')
 
-let _favorite_contents = ''
+let favoriteContents = ''
 restaurants.forEach((restaurant) => {
-    _favorite_contents += `
+  favoriteContents += `
     <article class="favorite__item">
         <div class="favorite__img">
             <img class="" src="${restaurant.pictureId}" alt="${restaurant.name}">
@@ -26,19 +26,18 @@ restaurants.forEach((restaurant) => {
     `
 })
 
-FAVORITE_CONTENT.innerHTML = _favorite_contents
-
+FAVORITE_CONTENT.innerHTML = favoriteContents
 
 // drawer transition
-const DRAWER_TRIGGER = document.querySelector("#header__menu")
-const DRAWER_CLOSE = document.querySelector("#drawer__close")
-const DRAWER = document.querySelector("#drawer")
+const DRAWER_TRIGGER = document.querySelector('#header__menu')
+const DRAWER_CLOSE = document.querySelector('#drawer__close')
+const DRAWER = document.querySelector('#drawer')
 
-DRAWER_TRIGGER.addEventListener("click", function(event){
-    DRAWER.classList.add("open")
-    event.stopPropagation()
+DRAWER_TRIGGER.addEventListener('click', function (event) {
+  DRAWER.classList.add('open')
+  event.stopPropagation()
 })
-DRAWER_CLOSE.addEventListener("click", function(event){
-    DRAWER.classList.remove("open")
-    event.stopPropagation()
+DRAWER_CLOSE.addEventListener('click', function (event) {
+  DRAWER.classList.remove('open')
+  event.stopPropagation()
 })
