@@ -187,7 +187,7 @@ img{
 .best #best__content{
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 33%);
   position: relative;
 }
 .best .best__background{
@@ -229,6 +229,8 @@ img{
   margin-top: 20px;
   border-top: 2px solid var(--color-text);
   border-bottom: 2px solid var(--color-text);
+  display: flex;
+  justify-content: space-between;
 }
 .best #best__content .best__item .best__inner .best__title{
   font-size: 28px;
@@ -247,6 +249,10 @@ img{
 }
 .best #best__content .best__item .best__link:hover h3{
   letter-spacing: 3px;
+}
+.best #best__content .best__item .btn__favorite img{
+  width: 48px;
+  height: 48px;
 }
 
 footer{
@@ -295,8 +301,17 @@ footer{
   width: 55%;
 }
 .detail .detail__inner #detail__content .detail__title{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.detail .detail__inner #detail__content .detail__title h1{
   font-family: var(--font-anton);
-  font-size: 70px;
+  font-size: 60px;
+}
+.detail .detail__inner #detail__content .detail__title #btn__favorite img{
+  width: 64px;
+  height: 64px;
 }
 .detail .detail__inner #detail__content .detail__city{
   font-size: 48px;
@@ -323,7 +338,7 @@ footer{
 }
 #restaurant_menu .menu__inner{
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 25%);
   gap: 20px;
 }
 #restaurant_menu .menu__inner .menu__item{
@@ -332,6 +347,7 @@ footer{
   min-height: 150px;
   font-size: 32px;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
@@ -381,4 +397,78 @@ footer{
 }
 .review .review__item .review__content .review__description{
   font-size: 20px;
+}
+
+/* favorite */
+.favorite{
+  position: relative;
+  padding: 50px 100px;
+}
+.favorite #favorite__content{
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 33%);
+  position: relative;
+}
+.favorite .favorite__background{
+  position: absolute;
+  bottom: 0;
+  height: 75%;
+  left: 0;
+  right: 0;
+  background: var(--color-secondary);
+}
+.favorite #favorite__content .favorite__item .favorite__img{
+  position: relative;
+}
+.favorite #favorite__content .favorite__item img{
+  height: 250px;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.favorite #favorite__content .favorite__item img:hover{
+  left: -100px;
+  opacity: 1;
+  filter: brightness(0.6);
+}
+.favorite #favorite__content .favorite__item .favorite__img .favorite__rating{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 20px;
+  padding: 10px;
+  display: none;
+}
+.favorite #favorite__content .favorite__item .favorite__img:hover .favorite__rating{
+  display: block;
+}
+.favorite #favorite__content .favorite__item .favorite__inner{
+  padding: 10px 0;
+  margin-top: 20px;
+  border-top: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+}
+.favorite #favorite__content .favorite__item .favorite__inner .favorite__title{
+  font-size: 28px;
+}
+.favorite #favorite__content .favorite__item .favorite__inner .favorite__city{
+  font-size: 16px;
+  font-style: italic;
+  color: var(--color-text);
+}
+.favorite #favorite__content .favorite__item .favorite__link{
+  color: var(--color-primary);
+  width: 100%;
+}
+.favorite #favorite__content .favorite__item .favorite__link:hover{
+  color: var(--color-text);
+}
+.favorite #favorite__content .favorite__item .favorite__link:hover h3{
+  letter-spacing: 3px;
+}
+
+.data__message{
+  font-size: 24px;
 }

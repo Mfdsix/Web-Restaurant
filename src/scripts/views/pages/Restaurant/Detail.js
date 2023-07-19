@@ -6,6 +6,7 @@ import {
   ReviewTemplate,
   MenuTemplate
 } from '../../templates/Restaurant/Detail'
+import FavoriteButton from '../../components/FavoriteButton'
 
 const RestaurantDetailPage = {
   async render () {
@@ -48,6 +49,12 @@ const RestaurantDetailPage = {
       menuContainer.innerHTML = MenuTemplate(restaurant.menus)
       detailContainer.innerHTML = DetailTemplate(restaurant)
       reviewContainer.innerHTML = ReviewTemplate(restaurant.customerReviews)
+
+      const favoriteContainer = document.querySelector('#btn__favorite')
+      favoriteContainer.innerHTML = FavoriteButton.init({
+        container: favoriteContainer,
+        restaurant
+      })
     } else {
       alert('Restaurant Not Found')
     }

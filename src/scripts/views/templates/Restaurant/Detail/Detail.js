@@ -1,8 +1,10 @@
-const DetailShimmer = (restaurant) => `
-    <h1 class="detail__title">${restaurant.name}</h1>` +
+const DetailTemplate = (restaurant) => `
+    <div class="detail__title">
+      <h1>${restaurant.name}</h1>
 
+      <a data-id="${restaurant.id}" href="javascript:void(0)" id="btn__favorite"></a>
+    </div>` +
     _renderCategories(restaurant.categories) +
-
     `<h3 class="detail__city">${restaurant.city}</h3>
     <p class="detail__description">${restaurant.description}</p>
 `
@@ -18,4 +20,4 @@ const _renderCategories = (categories) => {
     '</div>'
 }
 
-export default DetailShimmer
+export default DetailTemplate
