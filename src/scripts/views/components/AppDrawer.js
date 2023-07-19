@@ -6,7 +6,7 @@ const AppDrawer = {
     })
 
     closer.addEventListener('click', (event) => {
-      drawer.classList.add('open')
+      drawer.classList.remove('open')
       event.stopPropagation()
     })
   }
