@@ -49,6 +49,7 @@ const RestaurantDetailPage = {
       const reviewContainer = document.querySelector('#review__inner')
 
       imageContainer.innerHTML = ImageTemplate({
+        imageAlt: restaurant.name,
         imageId: restaurant.pictureId,
         rating: restaurant.rating
       })
