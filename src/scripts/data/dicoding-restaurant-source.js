@@ -13,7 +13,7 @@ class DicodingRestaurantSource {
   }
 
   static async detailRestaurant (id) {
-    const response = await fetch(API_ENDPOINT.GET_DETAIL_RESTAURANT(id))
+    const response = await HttpRequest(API_ENDPOINT.GET_DETAIL_RESTAURANT(id))
     return response.json()
   }
 }

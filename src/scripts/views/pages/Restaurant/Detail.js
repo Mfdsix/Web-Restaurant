@@ -1,15 +1,56 @@
 import DicodingRestaurantSource from '../../../data/dicoding-restaurant-source'
 import UrlParser from '../../../utils/url-parser'
+import {
+  ImageTemplate,
+  DetailTemplate,
+  ReviewTemplate,
+  MenuTemplate
+} from '../../templates/Restaurant/Detail'
 
 const RestaurantDetailPage = {
-  async render () {},
+  async render () {
+    return `
+    <section class="detail">
+      <div class="detail__inner">
+        <div id="detail__img"></div>
+
+        <div id="detail__content"></div>
+      </div>
+    </section>
+
+    <section id="restaurant_menu"></section>
+
+    <section class="review">
+      <h3 class="section-title font-title">Puth's Reputation</h3>
+      <div class="review__background"></div>
+
+      <div id="review__inner"></div>
+    </section>
+    `
+  },
 
   async afterRender () {
     const url = UrlParser.parseActiveUrlWithoutCombiner()
-    const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id)
-    const detailContainer = document.querySelector('a')
+    const detail = await DicodingRestaurantSource.detailRestaurant(url.id)
 
-    detailContainer.innerHTML += restaurant
+    if (detail && !detail.error) {
+      const { restaurant } = detail
+
+      const imageContainer = document.querySelector('#detail__img')
+      const detailContainer = document.querySelector('#detail__content')
+      const menuContainer = document.querySelector('#restaurant_menu')
+      const reviewContainer = document.querySelector('#review__inner')
+
+      imageContainer.innerHTML = ImageTemplate({
+        imageId: restaurant.pictureId,
+        rating: restaurant.rating
+      })
+      menuContainer.innerHTML = MenuTemplate(restaurant.menus)
+      detailContainer.innerHTML = DetailTemplate(restaurant)
+      reviewContainer.innerHTML = ReviewTemplate(restaurant.customerReviews)
+    } else {
+      alert('Restaurant Not Found')
+    }
   }
 }
 
