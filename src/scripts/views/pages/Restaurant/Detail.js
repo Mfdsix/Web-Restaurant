@@ -4,7 +4,11 @@ import {
   ImageTemplate,
   DetailTemplate,
   ReviewTemplate,
-  MenuTemplate
+  MenuTemplate,
+  ImageShimmer,
+  DetailShimmer,
+  MenuShimmer,
+  ReviewShimmer
 } from '../../templates/Restaurant/Detail'
 import FavoriteButton from '../../components/FavoriteButton'
 
@@ -31,6 +35,8 @@ const RestaurantDetailPage = {
   },
 
   async afterRender () {
+    this.renderShimmer()
+    
     const url = UrlParser.parseActiveUrlWithoutCombiner()
     const detail = await DicodingRestaurantSource.detailRestaurant(url.id)
 
@@ -58,6 +64,18 @@ const RestaurantDetailPage = {
     } else {
       alert('Restaurant Not Found')
     }
+  },
+
+  renderShimmer () {
+    const imageContainer = document.querySelector('#detail__img')
+    const detailContainer = document.querySelector('#detail__content')
+    const menuContainer = document.querySelector('#restaurant_menu')
+    const reviewContainer = document.querySelector('#review__inner')
+
+    imageContainer.innerHTML = ImageShimmer()
+    detailContainer.innerHTML = DetailShimmer()
+    menuContainer.innerHTML = MenuShimmer()
+    reviewContainer.innerHTML = ReviewShimmer()
   }
 }
 

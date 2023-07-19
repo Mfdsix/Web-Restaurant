@@ -6,6 +6,7 @@ const DetailTemplate = (restaurant) => `
     </div>` +
     _renderCategories(restaurant.categories) +
     `<h3 class="detail__city">${restaurant.city}</h3>
+    <span>${restaurant.address}</span>
     <p class="detail__description">${restaurant.description}</p>
 `
 
