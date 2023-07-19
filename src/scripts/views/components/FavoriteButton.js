@@ -3,7 +3,6 @@ import DB from '../../data/idb-favorite-restaurant'
 const FavoriteButton = {
   async init ({ container, restaurant }) {
     this._container = container
-    console.log("init", container)
     this._restaurant = restaurant
     this._isFavorited = false
 
@@ -18,8 +17,6 @@ const FavoriteButton = {
     this._container.innerHTML = this._isFavorited
       ? '<img src="/icons/favorite-active.png"/>'
       : '<img src="/icons/favorite.png"/>'
-
-    console.log("content", this._container)
 
     this._container.addEventListener('click', async (event) => {
       this._toggleFavoriteState()

@@ -36,7 +36,7 @@ const RestaurantDetailPage = {
 
   async afterRender () {
     this.renderShimmer()
-    
+
     const url = UrlParser.parseActiveUrlWithoutCombiner()
     const detail = await DicodingRestaurantSource.detailRestaurant(url.id)
 

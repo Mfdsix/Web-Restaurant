@@ -17,16 +17,16 @@ const assetsToCache = [
   './app.bundle.js',
   './app.webmanifest',
   './sw.bundle.js'
-];
+]
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
-});
+  event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]))
+})
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(CacheHelper.deleteOldCache());
-});
+  event.waitUntil(CacheHelper.deleteOldCache())
+})
 
 self.addEventListener('fetch', (event) => {
-  event.respondWith(CacheHelper.revalidateCache(event.request));
-});
+  event.respondWith(CacheHelper.revalidateCache(event.request))
+})

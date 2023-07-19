@@ -19,7 +19,7 @@ const RestaurantFavoritePage = {
     const favorites = await DB.getAll()
     const favoriteContainer = document.querySelector('#favorite__content')
 
-    if (favorites.length == 0) document.querySelector('.favorite__background').remove()
+    if (favorites.length === 0) document.querySelector('.favorite__background').remove()
 
     favoriteContainer.innerHTML = ListTemplate(favorites)
   }
