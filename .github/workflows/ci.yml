@@ -23,4 +23,4 @@ jobs:
         run: |
           npm install
           npm run test
-          npm run e2e
+          npx codeceptjs run --override '{"helpers": {"Puppeteer": {"show": false}}}' --steps
