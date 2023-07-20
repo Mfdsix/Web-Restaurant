@@ -1,20 +1,22 @@
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 import AssetHelper from '../../../../utils/asset-helper'
 
 const ListTemplate = (restaurants = []) => {
   if (restaurants && restaurants.length > 0) {
     return restaurants.map((restaurant) => `
           <article class="favorite__item">
-          <a href="/#/resto/${restaurant.id}" class="favorite__link">
-          <div class="favorite__img">
-          <img class="" src="${AssetHelper.getAsset(restaurant.pictureId)}" alt="${restaurant.name}">
-          <div class="favorite__rating">${restaurant.rating}</div>
-          </div>
+            <a href="/#/resto/${restaurant.id}" class="favorite__link">
+              <div class="favorite__img">
+                <img class="lazyload" data-src="${AssetHelper.getAsset(restaurant.pictureId)}" alt="${restaurant.name}">
+                <div class="favorite__rating">${restaurant.rating}</div>
+              </div>
           
-          <div class="favorite__inner">
-          <h4 class="favorite__city">${restaurant.city}</h4>
-          <h3 class="favorite__title">${restaurant.name}</h3>
-          </div>
-          </a>
+              <div class="favorite__inner">
+                <h4 class="favorite__city">${restaurant.city}</h4>
+                <h3 class="favorite__title">${restaurant.name}</h3>
+              </div>
+            </a>
           </article>`
     ).join('')
   } else {

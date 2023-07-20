@@ -19,8 +19,8 @@ const FavoriteButton = {
     this._container.setAttribute('aria-label', this._isFavorited ? 'Unfavorite this Restaurant' : 'Favorite this Restaurant')
 
     this._container.innerHTML = this._isFavorited
-      ? '<img src="/icons/favorite-active.png"/>'
-      : '<img src="/icons/favorite.png"/>'
+      ? '<img src="/icons/favorite-active.png" alt=""/>'
+      : '<img src="/icons/favorite.png" alt=""/>'
 
     this._container.addEventListener('click', async (event) => {
       this._toggleFavoriteState()
