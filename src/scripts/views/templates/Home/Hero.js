@@ -1,6 +1,12 @@
 const HeroTemplate = `
 <div class="hero removable">
-    <img class="hero__img" src="/images/heros/hero-image_4.jpg" alt="Food Hero Background">
+    <picture>
+        <source media="(max-width: 600px)" type="image/webp" srcset="/images/hero-image-sm.webp">
+        <source media="(max-width: 600px)" type="image/jpeg" srcset="/images/hero-image-sm.jpg">
+        <source type="image/webp" srcset="/images/hero-image-lg.webp">
+        <source type="image/jpeg" srcset="/images/hero-image-lg.jpg">
+        <img class="hero__img" src="/images/hero-image-lg.jpg" alt="Food Hero Background">
+    </picture>
 
     <div class="hero__inner">
         <h1 class="font-title">PUTH FOOD</h1>
