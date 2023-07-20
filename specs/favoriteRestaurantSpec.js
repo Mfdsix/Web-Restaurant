@@ -1,5 +1,5 @@
-import FavoriteButton from '../src/scripts/views/components/FavoriteButton'
 import DB from '../src/scripts/data/idb-favorite-restaurant'
+import * as TestFactories from './factories/favoriteButtonFactory'
 
 describe('Mark Restaurant as Favorite', () => {
   function _renderContainer () {
@@ -11,11 +11,8 @@ describe('Mark Restaurant as Favorite', () => {
   })
 
   it('Should show Favorite Button when Restaurant not favorited yet', async () => {
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {
-        id: 1
-      }
+    await TestFactories.initFavoriteButtonWithRestaurant({
+      id: 1
     })
 
     expect(document.querySelector('[aria-label="Favorite this Restaurant"]'))
@@ -23,11 +20,8 @@ describe('Mark Restaurant as Favorite', () => {
   })
 
   it('Should not show Unfavorite Button when Restaurant not favorited yet', async () => {
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {
-        id: 1
-      }
+    await TestFactories.initFavoriteButtonWithRestaurant({
+      id: 1
     })
 
     expect(document.querySelector('[aria-label="Unfavorite this Restaurant"]'))
@@ -37,11 +31,8 @@ describe('Mark Restaurant as Favorite', () => {
   it('Should be able to mark restaurant as Favorite', async () => {
     const restaurantId = 1
 
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {
-        id: restaurantId
-      }
+    await TestFactories.initFavoriteButtonWithRestaurant({
+      id: restaurantId
     })
 
     document.querySelector('#favoriteButtonContainer').dispatchEvent(new Event('click'))
@@ -56,11 +47,8 @@ describe('Mark Restaurant as Favorite', () => {
 
   it('Should not Favorite Restaurant again after being favorited', async () => {
     const restaurantId = 1
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {
-        id: restaurantId
-      }
+    await TestFactories.initFavoriteButtonWithRestaurant({
+      id: restaurantId
     })
 
     await DB.putOne({
@@ -77,10 +65,7 @@ describe('Mark Restaurant as Favorite', () => {
   })
 
   it('Should not Add Restaurant when ID is not defined', async () => {
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {}
-    })
+    await TestFactories.initFavoriteButtonWithRestaurant({})
 
     document.querySelector('#favoriteButtonContainer').dispatchEvent(new Event('click'))
 

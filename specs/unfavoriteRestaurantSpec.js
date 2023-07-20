@@ -1,5 +1,5 @@
-import FavoriteButton from '../src/scripts/views/components/FavoriteButton'
 import DB from '../src/scripts/data/idb-favorite-restaurant'
+import * as TestFactories from './factories/favoriteButtonFactory'
 
 describe('Unfavorite Restaurant', () => {
   function _renderContainer () {
@@ -22,11 +22,8 @@ describe('Unfavorite Restaurant', () => {
   })
 
   it('Should show Unfavorite Button when Restaurant favorited', async () => {
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {
-        id: 1
-      }
+    await TestFactories.initFavoriteButtonWithRestaurant({
+      id: 1
     })
 
     expect(document.querySelector('[aria-label="Unfavorite this Restaurant"]'))
@@ -34,11 +31,8 @@ describe('Unfavorite Restaurant', () => {
   })
 
   it('Should not show Favorite Button when Restaurant favorited', async () => {
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {
-        id: 1
-      }
+    await TestFactories.initFavoriteButtonWithRestaurant({
+      id: 1
     })
 
     expect(document.querySelector('[aria-label="Favorite this Restaurant"]'))
@@ -48,11 +42,8 @@ describe('Unfavorite Restaurant', () => {
   it('Should be able to Unfavorite Restaurant', async () => {
     const restaurantId = 1
 
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {
-        id: restaurantId
-      }
+    await TestFactories.initFavoriteButtonWithRestaurant({
+      id: restaurantId
     })
 
     document.querySelector('#favoriteButtonContainer').dispatchEvent(new Event('click'))
@@ -62,10 +53,7 @@ describe('Unfavorite Restaurant', () => {
   })
 
   it('Should not Remove Restaurant when ID is not defined', async () => {
-    await FavoriteButton.init({
-      container: document.querySelector('#favoriteButtonContainer'),
-      restaurant: {}
-    })
+    await TestFactories.initFavoriteButtonWithRestaurant({})
 
     document.querySelector('#favoriteButtonContainer').dispatchEvent(new Event('click'))
 

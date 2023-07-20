@@ -11,6 +11,7 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 
 const IDBFavoriteRestaurant = {
   async findOne (id) {
+    if (!id) return
     return (await dbPromise).get(FAVORITE_STORE_NAME, id)
   },
   async getAll () {
