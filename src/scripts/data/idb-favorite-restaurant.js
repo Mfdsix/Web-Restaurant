@@ -17,6 +17,7 @@ const IDBFavoriteRestaurant = {
     return (await dbPromise).getAll(FAVORITE_STORE_NAME)
   },
   async putOne (restaurant) {
+    if (!restaurant.hasOwnProperty('id')) return
     return (await dbPromise).put(FAVORITE_STORE_NAME, restaurant)
   },
   async deleteById (id) {
