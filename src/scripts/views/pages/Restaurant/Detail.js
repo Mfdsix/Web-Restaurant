@@ -11,6 +11,7 @@ import {
   ReviewShimmer
 } from '../../templates/Restaurant/Detail'
 import FavoriteButton from '../../components/FavoriteButton'
+import IDBFavoriteRestaurant from '../../../data/idb-favorite-restaurant'
 
 const RestaurantDetailPage = {
   async render () {
@@ -60,7 +61,8 @@ const RestaurantDetailPage = {
       const favoriteContainer = document.querySelector('#btn__favorite')
       favoriteContainer.innerHTML = FavoriteButton.init({
         container: favoriteContainer,
-        restaurant
+        restaurant,
+        storage: IDBFavoriteRestaurant
       })
     } else {
       alert('Restaurant Not Found')

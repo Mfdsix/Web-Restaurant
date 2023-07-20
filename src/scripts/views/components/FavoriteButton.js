@@ -1,8 +1,8 @@
-import DB from '../../data/idb-favorite-restaurant'
-
 const FavoriteButton = {
-  async init ({ container, restaurant }) {
+  async init ({ container, restaurant, storage }) {
     if (!restaurant || !restaurant.id) return
+
+    this._storage = storage
 
     this._container = container
     this._restaurant = restaurant
@@ -29,15 +29,15 @@ const FavoriteButton = {
   },
 
   async _isRestaurantExist (id) {
-    const restaurant = await DB.findOne(id)
+    const restaurant = await this._storage.findOne(id)
     return !!restaurant
   },
 
   async _toggleFavoriteState () {
     if (this._isFavorited && this._restaurant && this._restaurant.id) {
-      await DB.deleteById(this._restaurant.id)
+      await this._storage.deleteById(this._restaurant.id)
     } else {
-      await DB.putOne(this._restaurant)
+      await this._storage.putOne(this._restaurant)
     }
     this._renderButton()
   }

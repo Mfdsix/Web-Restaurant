@@ -1,6 +1,7 @@
 import DicodingRestaurantSource from '../../data/dicoding-restaurant-source'
 import { HeroTemplate, BestRestaurantTemplate, BestRestaurantShimmer } from '../templates/Home'
 import FavoriteButton from '../components/FavoriteButton'
+import IDBFavoriteRestaurant from '../../data/idb-favorite-restaurant'
 
 const HomePage = {
   async render () {
@@ -27,7 +28,8 @@ const HomePage = {
       const favoriteContainer = document.querySelector(`[data-id="${restaurants[i].id}"]`)
       await FavoriteButton.init({
         container: favoriteContainer,
-        restaurant: restaurants[i]
+        restaurant: restaurants[i],
+        storage: IDBFavoriteRestaurant
       })
     }
   },
