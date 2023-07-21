@@ -1,10 +1,14 @@
+import * as WorkboxWindow from 'workbox-window'
+
 const swRegister = async () => {
   if (!('serviceWorker' in navigator)) {
     return
   }
 
+  const wb = new WorkboxWindow.Workbox('/sw.bundle.js')
+
   try {
-    await navigator.serviceWorker.register('./sw.bundle.js')
+    await wb.register()
   } catch (error) {
   }
 }
